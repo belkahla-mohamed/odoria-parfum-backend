@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pack_products",
+  "info": {
+    "singularName": "pack-product",
+    "pluralName": "pack-products",
+    "displayName": "Pack Product"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pack": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pack.pack",
+      "inversedBy": "pack_products"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "pack_products"
+    },
+    "product_sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-size.product-size",
+      "inversedBy": "pack_products"
+    },
+    "minQty": {
+      "type": "integer"
+    },
+    "maxQty": {
+      "type": "integer"
+    }
+  }
+}

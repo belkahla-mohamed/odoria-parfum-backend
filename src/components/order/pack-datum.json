@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_order_pack_data",
+  "info": {
+    "displayName": "Pack Datum"
+  },
+  "options": {},
+  "attributes": {
+    "productIds": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}

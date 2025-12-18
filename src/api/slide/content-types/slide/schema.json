@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slides",
+  "info": {
+    "singularName": "slide",
+    "pluralName": "slides",
+    "displayName": "Slide"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media"
+    },
+    "link": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "align": {
+      "type": "enumeration",
+      "default": "center",
+      "enum": [
+        "center",
+        "left",
+        "right"
+      ]
+    },
+    "cta": {
+      "type": "string"
+    }
+  }
+}

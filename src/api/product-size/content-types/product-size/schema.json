@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product-sizes",
+  "info": {
+    "singularName": "product-size",
+    "pluralName": "product-sizes",
+    "displayName": "Product Size"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "productSizes"
+    },
+    "pack_products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pack-product.pack-product",
+      "mappedBy": "product_sizes"
+    }
+  }
+}

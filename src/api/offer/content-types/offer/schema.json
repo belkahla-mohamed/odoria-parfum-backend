@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media"
+    },
+    "priceBefore": {
+      "type": "integer"
+    },
+    "priceAfter": {
+      "type": "integer"
+    },
+    "expiresAt": {
+      "type": "datetime"
+    }
+  }
+}

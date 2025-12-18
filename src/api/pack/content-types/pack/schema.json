@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "packs",
+  "info": {
+    "singularName": "pack",
+    "pluralName": "packs",
+    "displayName": "Packs"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fixed",
+        "customizable"
+      ]
+    },
+    "price": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "media"
+    },
+    "description": {
+      "type": "text"
+    },
+    "promotionRules": {
+      "type": "component",
+      "component": "marketing.promotion-rule",
+      "repeatable": false
+    },
+    "orderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "pack"
+    },
+    "favoritePack": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::favorite.favorite",
+      "mappedBy": "pack"
+    },
+    "cartItemPack": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "pack"
+    },
+    "pack_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pack-product.pack-product",
+      "mappedBy": "pack"
+    }
+  }
+}

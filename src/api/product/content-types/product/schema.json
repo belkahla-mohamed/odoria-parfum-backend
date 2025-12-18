@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Products"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "stock": {
+      "type": "integer",
+      "default": 0
+    },
+    "notes": {
+      "type": "component",
+      "component": "product.perfume-note",
+      "repeatable": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "productSizes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-size.product-size",
+      "mappedBy": "product"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "product"
+    },
+    "orderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "product"
+    },
+    "favoriteProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::favorite.favorite",
+      "mappedBy": "product"
+    },
+    "cartItemProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "product"
+    },
+    "pack_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pack-product.pack-product",
+      "mappedBy": "product"
+    }
+  }
+}

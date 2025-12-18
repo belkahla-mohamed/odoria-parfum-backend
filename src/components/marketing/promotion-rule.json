@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_marketing_promotion_rules",
+  "info": {
+    "displayName": "Promotion Rule"
+  },
+  "options": {},
+  "attributes": {
+    "buyCount": {
+      "type": "integer"
+    },
+    "freeCount": {
+      "type": "integer"
+    },
+    "enabled": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
