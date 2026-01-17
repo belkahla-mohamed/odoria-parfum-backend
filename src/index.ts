@@ -24,7 +24,7 @@ export default {
         .findOne({ where: { type: 'authenticated' } });
 
       if (!authenticatedRole) {
-        console.log('Authenticated role not found');
+    
         return;
       }
 
@@ -75,11 +75,11 @@ export default {
               enabled: true,
             },
           });
-          console.log(`Enabled permission: ${permission.action}`);
+         
         }
       }
       
-      console.log('Permissions configured successfully');
+      
     } catch (error) {
       console.error('Failed to configure permissions', error);
     }

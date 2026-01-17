@@ -37,6 +37,10 @@
     },
     "imageURL": {
       "type": "string"
+    },
+    "isActiveButton": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

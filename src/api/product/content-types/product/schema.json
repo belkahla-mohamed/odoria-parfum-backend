@@ -75,6 +75,9 @@
       "relation": "oneToMany",
       "target": "api::pack-product.pack-product",
       "mappedBy": "product"
+    },
+    "imageURL": {
+      "type": "string"
     }
   }
 }

@@ -824,6 +824,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::favorite.favorite'
     >;
+    imageURL: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -919,6 +920,8 @@ export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     cta: Schema.Attribute.String;
     imageURL: Schema.Attribute.String;
+    isActiveButton: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slide.slide'> &
