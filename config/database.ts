@@ -1,15 +1,30 @@
-export default ({ env }) => ({
-  connection: {
-    client: "postgres",
+export default ({ env }) => {
+  const isProduction = env("NODE_ENV") === "production";
+
+  return {
     connection: {
-      connectionString: env("DATABASE_URL"),
-      ssl: env.bool("DATABASE_SSL", false) && {
-        rejectUnauthorized: env.bool("DATABASE_SSL_REJECT_UNAUTHORIZED", true),
+      client: "postgres",
+      connection: isProduction
+        ? {
+            // 🔴 PRODUCTION (Railway / Cloud)
+            connectionString: env("DATABASE_URL"),
+            ssl: {
+              rejectUnauthorized: false,
+            },
+          }
+        : {
+            // 🟢 LOCAL
+            host: env("DATABASE_HOST"),
+            port: env.int("DATABASE_PORT"),
+            database: env("DATABASE_NAME"),
+            user: env("DATABASE_USERNAME"),
+            password: env("DATABASE_PASSWORD"),
+            ssl: false,
+          },
+      pool: {
+        min: 2,
+        max: 10,
       },
     },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-  },
-});
+  };
+};
