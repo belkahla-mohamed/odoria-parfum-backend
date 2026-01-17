@@ -17,9 +17,6 @@
     "subtitle": {
       "type": "string"
     },
-    "image": {
-      "type": "media"
-    },
     "link": {
       "type": "string"
     },
@@ -36,6 +33,9 @@
       ]
     },
     "cta": {
+      "type": "string"
+    },
+    "imageURL": {
       "type": "string"
     }
   }

@@ -19,10 +19,6 @@
       "type": "integer",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "required": true
-    },
     "description": {
       "type": "blocks"
     },

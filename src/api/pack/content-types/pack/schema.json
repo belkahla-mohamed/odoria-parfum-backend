@@ -24,9 +24,6 @@
     "price": {
       "type": "integer"
     },
-    "image": {
-      "type": "media"
-    },
     "description": {
       "type": "text"
     },
@@ -58,6 +55,9 @@
       "relation": "oneToMany",
       "target": "api::pack-product.pack-product",
       "mappedBy": "pack"
+    },
+    "imageURL": {
+      "type": "string"
     }
   }
 }

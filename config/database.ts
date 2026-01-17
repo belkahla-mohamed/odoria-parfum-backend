@@ -3,8 +3,8 @@ export default ({ env }) => ({
     client: "postgres",
     connection: {
       connectionString: env("DATABASE_URL"),
-      ssl: {
-        rejectUnauthorized: false,
+      ssl: env.bool("DATABASE_SSL", false) && {
+        rejectUnauthorized: env.bool("DATABASE_SSL_REJECT_UNAUTHORIZED", true),
       },
     },
     pool: {

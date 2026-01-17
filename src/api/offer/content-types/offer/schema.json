@@ -9,20 +9,13 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": false
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string"
     },
     "description": {
       "type": "text"
-    },
-    "image": {
-      "type": "media"
     },
     "priceBefore": {
       "type": "integer"
@@ -32,6 +25,9 @@
     },
     "expiresAt": {
       "type": "datetime"
+    },
+    "imageURL": {
+      "type": "string"
     }
   }
 }

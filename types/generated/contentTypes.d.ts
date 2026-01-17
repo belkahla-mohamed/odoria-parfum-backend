@@ -514,17 +514,12 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: false;
   };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
-  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media & Schema.Attribute.Required;
+    imageURL: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -588,18 +583,13 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: false;
   };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
-  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     expiresAt: Schema.Attribute.DateTime;
-    image: Schema.Attribute.Media;
+    imageURL: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'> &
       Schema.Attribute.Private;
@@ -748,7 +738,7 @@ export interface ApiPackPack extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::favorite.favorite'
     >;
-    image: Schema.Attribute.Media;
+    imageURL: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::pack.pack'> &
       Schema.Attribute.Private;
@@ -834,7 +824,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::favorite.favorite'
     >;
-    image: Schema.Attribute.Media & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -929,7 +918,7 @@ export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.String;
-    image: Schema.Attribute.Media;
+    imageURL: Schema.Attribute.String;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slide.slide'> &
